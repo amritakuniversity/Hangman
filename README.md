@@ -1,113 +1,97 @@
-# Hangman
 📘 **HANGMAN GAME (C Programming)**
 
 📄 **ABSTRACT**  
-The Hangman Game is a terminal-based word guessing application written in C that allows users to play the classic Hangman game interactively. The system selects a random word from a preset list and displays a helpful hint. The player must guess one letter at a time before the hangman drawing is completed. The player wins if the word is fully revealed within 6 incorrect attempts.  
-This project demonstrates key C programming concepts such as structures, arrays, strings, file-less game logic, loops, conditional statements, and modular programming, making it ideal for beginners and students.
+The Hangman Game is a terminal-based word guessing application written in C that lets users play the classic Hangman game interactively. The system chooses a random word from a built-in list or allows a user-entered secret word, then provides hints and tracks guesses. Players reveal the word one letter at a time and must complete the word before 6 incorrect attempts.  
+This project demonstrates key C programming concepts such as structures, arrays, strings, loops, conditionals, and modular function-based programming, making it ideal for beginners and students.
 
 ---
 
 ✨ **FEATURES**
 
 **Core Functionalities**  
-🎯 Random word selection from predefined list  
-💡 Hint display for each word  
+🎯 Two game modes: Built-in list or user-entered secret word  
+💡 Hint display for every secret word  
 ⬜ Dynamic word reveal using underscore placeholders  
-🖼️ Progressive ASCII Hangman drawing for wrong guesses  
-🔁 Prevention of repeated letter guesses  
-✅ Win condition when full word is guessed  
-❌ Lose condition when maximum tries are exceeded  
-🖥️ Fully terminal-based, menu-free gameplay  
-👨‍💻 Beginner-friendly implementation using functions and structures  
-
----
-
-🛠️ **TECHNICAL REQUIREMENTS**
-
-**System Requirements**
-- Operating System: Windows / Linux / macOS  
-- Terminal or Command Prompt  
-- Minimum `4 MB RAM`  
-- Minimal disk space  
-
-**Software Requirements**
-- C Compiler: `GCC / MinGW / Clang / MSVC`  
-- Any code editor or IDE (`VS Code`, Code::Blocks, Dev-C++, etc.)  
-
-**Programming Requirements**
-- Programming Language: `C`  
-- Supported Standards: `C89 / C99 / C11`  
-- Required Header Files: `stdio.h`, `stdlib.h`, `string.h`, `stdbool.h`, `time.h`
-
----
+🖼️ Progressive ASCII Hangman drawing for each wrong attempt  
+🔁 Prevents duplicate guesses (case-insensitive)  
+🔤 Accepts single letter or full word guess  
+✅ Win condition when the word is correctly revealed  
+❌ Lose condition when max tries are reached  
+🖥️ Fully terminal-based gameplay  
 
 📌 **FUNCTIONAL REQUIREMENTS**
 
-**Gameplay Interface**
-- Runs entirely through the terminal (CLI)  
-- Displays word progress and hangman drawing  
-- Accepts single-letter input from user  
-- Validates guesses  
+**User Interaction**  
+- Runs entirely on terminal (CLI)  
+- Takes alphabet or full-word input  
+- Validates input before processing  
 
-**Game Actions**
+**Game Controls**  
 
 ➕ **Guess a Letter**  
-Enter one alphabet character to reveal parts of the word.
+Reveal parts of the word by entering one character.
 
-📋 **View Word Progress**  
-The system shows guessed letters and unrevealed blanks.
+📋 **View Progress**  
+Game continuously prints revealed word state and guessed letters.
 
-🖼️ **Incorrect Try Hangman Update**  
-The ASCII hangman art prints progressively for every wrong attempt.
+🖼️ **Wrong Guess Update**  
+Hangman drawing updates stage-by-stage for errors.
 
-🎉 **Victory Message**  
-Shown when the word is guessed before the hangman completes.
+🎉 **Win Feedback**  
+Success message displayed when the word is completed.
 
-😔 **Defeat Message**  
-Displayed when 6 incorrect attempts are reached.
+😔 **Lose Feedback**  
+Failure message shown when tries are exhausted.
 
-**Program Flow**
-- Game continues in loop until `Win` or `Lose` condition is triggered  
-- Prevents duplicate guesses  
-- Handles invalid letter input  
-
----
+**Game Flow**  
+- Game loops until `Win` or `Lose` is triggered  
+- Handles punctuation and capitalization safely  
+- Ensures smooth gameplay transitions  
 
 
 ---
 
- **DATA SOURCE**
+3️⃣ **DATA SOURCE**
 
-- Words are stored internally using a structure with hints  
-- No external files are required  
-- Randomization occurs every program run  
+- Words and hints are stored internally in a structured list  
+- No external data files required  
+- Random selection happens every game session  
 
 ---
 
 📸 **SCREENSHOTS**
 
-**Start Game + Hint**  
-<img width="328" height="117" alt="image" src="https://github.com/user-attachments/assets/0ecb586a-cee3-4d0b-9b0b-cb3158f2afba" />
+**Start Game + Mode Selection**  
+<img width="644" height="130" alt="image" src="https://github.com/user-attachments/assets/1e431292-0b04-4f53-9f97-ccb69624f099" />
 
 
-**Correct Letter Guess**  
-<img width="357" height="522" alt="image" src="https://github.com/user-attachments/assets/878f6e87-8199-4c67-81e9-442fda06e4e4" />
+**Correct Letter Guess Feedback**  
+<img width="633" height="447" alt="image" src="https://github.com/user-attachments/assets/5563b527-5f6f-48af-bd97-d2b9f40a29c9" />
 
 
-**Wrong Letter Guess + Hangman Draw**  
-<img width="662" height="488" alt="image" src="https://github.com/user-attachments/assets/df9d814a-0403-4214-86bf-d1ae7cae9144" />
-<img width="665" height="644" alt="image" src="https://github.com/user-attachments/assets/9c443388-0f15-4de2-ba63-3a2cd45bb2e5" />
-<img width="664" height="869" alt="image" src="https://github.com/user-attachments/assets/eae1e7d0-7973-4f01-9ccd-b774d42f7ab7" />
 
-**Win Message**  
-<img width="806" height="62" alt="image" src="https://github.com/user-attachments/assets/f6c2a63c-0624-4ec4-ba6c-8b1850d1c02b" />
+**Wrong Letter Guess & Hangman Stage Draw**  
+<img width="606" height="485" alt="image" src="https://github.com/user-attachments/assets/6f93be22-a45d-413c-908f-ec807a4a9b10" />
 
-**Lose Message**  
-<img width="759" height="54" alt="image" src="https://github.com/user-attachments/assets/e813a199-f676-4cc4-90ad-ead15281d33b" />
+
+**Duplicate Guess Warning**  
+<img width="584" height="448" alt="image" src="https://github.com/user-attachments/assets/1f339d3c-810e-4e1c-859a-cd0cbc619e27" />
+
+
+**Win Message Output**  
+<img width="688" height="499" alt="image" src="https://github.com/user-attachments/assets/c937fd57-887b-4a1e-892d-a247c6348e20" />
+
+
+**Lose Message Output**  
+<img width="671" height="421" alt="image" src="https://github.com/user-attachments/assets/e0c2380c-13bf-437a-b741-9c0498c5073b" />
 
 
 ---
 
-📝 **AUTHOR**  
+**THANK YOU!**
 **AMRITA K**
+
+
+
+
 
